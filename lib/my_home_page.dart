@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     colorAnimation = ColorTween(begin: Colors.black , end:  Colors.white).animate(animationController);
     colorAnimation2 = ColorTween(begin: Colors.red , end:  Colors.black).animate(animationController);
     colorAnimation3 = ColorTween(begin: Colors.yellow , end:  Colors.orange).animate(animationController);
-    colorAnimation4 = ColorTween(begin: Colors.purple , end:  Colors.purpleAccent).animate(animationController);
+    colorAnimation4 = ColorTween(begin: Colors.green , end:  Colors.white).animate(animationController);
     animationController.addListener(() {
       print(animation.value);
       setState(() {
@@ -62,6 +62,140 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Stack(
+                children:[
+                  Container(
+                    width: animation.value,
+                    height: animation.value,
+                    decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation.value,),
+                  ),
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    top: 20,
+                    bottom: 0,
+                    child: Container(
+                      width: animation2.value,
+                      height: animation2.value,
+                      decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation2.value,),
+                    ),
+                  ),
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    top: 35,
+                    bottom: 0,
+                    child: Container(
+                      width: animation3.value,
+                      height: animation3.value,
+                      decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation3.value,),
+                    ),
+                  ),
+
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    top: 50,
+                    bottom: 0,
+                    child: Container(
+                      width: animation4.value,
+                      height: animation4.value,
+                      decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation4.value,),
+                    ),
+                  ),
+                ]
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Stack(
+                    children:[
+                      Container(
+                        width: animation.value,
+                        height: animation.value,
+                        decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation.value,),
+                      ),
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        top: 20,
+                        bottom: 0,
+                        child: Container(
+                          width: animation2.value,
+                          height: animation2.value,
+                          decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation2.value,),
+                        ),
+                      ),
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        top: 35,
+                        bottom: 0,
+                        child: Container(
+                          width: animation3.value,
+                          height: animation3.value,
+                          decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation3.value,),
+                        ),
+                      ),
+
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        top: 50,
+                        bottom: 0,
+                        child: Container(
+                          width: animation4.value,
+                          height: animation4.value,
+                          decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation4.value,),
+                        ),
+                      ),
+                    ]
+                ),
+                Stack(
+                    children:[
+                      Container(
+                        width: animation.value,
+                        height: animation.value,
+                        decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation.value,),
+                      ),
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        top: 20,
+                        bottom: 0,
+                        child: Container(
+                          width: animation2.value,
+                          height: animation2.value,
+                          decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation2.value,),
+                        ),
+                      ),
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        top: 35,
+                        bottom: 0,
+                        child: Container(
+                          width: animation3.value,
+                          height: animation3.value,
+                          decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation3.value,),
+                        ),
+                      ),
+
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        top: 50,
+                        bottom: 0,
+                        child: Container(
+                          width: animation4.value,
+                          height: animation4.value,
+                          decoration: BoxDecoration(shape: BoxShape.circle,color: colorAnimation4.value,),
+                        ),
+                      ),
+                    ]
+                ),
+              ],
+            ),
             Stack(
               children:[
                 Container(
@@ -105,6 +239,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
                 ),
               ]
             ),
+            SizedBox(height: 10,),
             ElevatedButton(onPressed: (){
               toggleAnimation();
             },  child: Text(_isAnimating ? 'Stop Animation' : 'Start Animation'), )
